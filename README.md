@@ -1,5 +1,10 @@
 # 2FAS Backup QR code Handler
 
+## GitHub Pages
+
+Run the script online:
+https://s1m0nk4c.github.io/2fas-backup-to-QR/
+
 ## Description
 This program is designed for managing unencrypted backup files from the 2FAS app. You can run this code locally on your machine without needing an internet connection. Simply upload your `.2fas` file. Upon executing the script, you will receive a compressed ZIP file containing QR codes for all services included in the backup.
 
