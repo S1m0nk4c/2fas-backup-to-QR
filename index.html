@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2FA Backup Converter</title>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .info, #container, .disclaimer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .disclaimer {
+            font-size: 0.8em;
+            color: #666;
+            max-width: 80%;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        #loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid blue;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>2FA Backup Converter</h1>
+        <p>Convert unencrypted .2fas backup files to QR codes.<br />You can disconnect your computer from the Internet to generate codes.</p>
+    </div>
+    <div id="container">
+        <input type="file" id="fileInput">
+        <button id="generateButton">Generate QR Codes</button>
+        <a id="downloadLink" style="display: none;">Download ZIP</a>
+    </div>
+    <p class="disclaimer">You are using this program at your own risk.<br /><br />We are not responsible for its functioning or lack thereof.<br />Use it only at your own responsibility.<br /><br />Version 0.17
+    <div id="overlay">
+        <div id="loader"></div>
+    </div>
+    <script src="js/script.js?v=0.17"></script>
+</body>
+</html>
